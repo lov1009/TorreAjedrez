@@ -11,16 +11,28 @@ public class Torre {
 	}
 
 	public Torre(Color color) {
+		setColor(color);
 		if (color == Color.NEGRO) {
-			setColor(color);
 			setPosicion(new Posicion(8, 'h'));
-		}else {
-			setColor(color);
+		} else {
 			setPosicion(new Posicion(1, 'h'));
 		}
-			
+
 	}
-	
+
+	public Torre(Color color, char columna) {
+		if (columna != 'a' && columna != 'h') {
+			throw new IllegalArgumentException("columna no valida");
+		}
+		setColor(color);
+		if (color == Color.BLANCO) {
+			setPosicion(new Posicion(1, columna));
+		} else {
+			setPosicion(new Posicion(8, columna));
+		}
+
+	}
+
 	public Color getColor() {
 		return color;
 	}
