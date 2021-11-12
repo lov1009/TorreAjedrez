@@ -12,6 +12,15 @@ public class Posicion {
 		setColumna(columna);
 	}
 
+	public Posicion(Posicion posicion) {
+		if (posicion == null) {
+			throw new NullPointerException("ERROR: No es posible copiar una posición nula.");
+		}
+
+		fila = posicion.fila;
+		columna = posicion.columna;
+	}
+
 	private void setFila(int fila) {
 		if (fila >= 1 && fila <= 8) {
 			this.fila = fila;
