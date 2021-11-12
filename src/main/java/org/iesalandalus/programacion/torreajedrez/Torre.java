@@ -10,6 +10,17 @@ public class Torre {
 		setPosicion(new Posicion(8, 'h'));
 	}
 
+	public Torre(Color color) {
+		if (color == Color.NEGRO) {
+			setColor(color);
+			setPosicion(new Posicion(8, 'h'));
+		}else {
+			setColor(color);
+			setPosicion(new Posicion(1, 'h'));
+		}
+			
+	}
+	
 	public Color getColor() {
 		return color;
 	}
