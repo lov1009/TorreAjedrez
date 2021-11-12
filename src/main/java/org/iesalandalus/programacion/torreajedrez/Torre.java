@@ -5,6 +5,11 @@ public class Torre {
 	private Color color;
 	private Posicion posicion;
 
+	public Torre() {
+		setColor(Color.NEGRO);
+		setPosicion(new Posicion(8, 'h'));
+	}
+
 	public Color getColor() {
 		return color;
 	}
