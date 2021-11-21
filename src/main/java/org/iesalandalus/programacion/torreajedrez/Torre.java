@@ -25,8 +25,7 @@ public class Torre {
 	}
 
 	public Torre(Color color, char columna) {
-		if (columna < 'a' || columna > 'h') { // Preguntar pq el test m obliga a poner eso, pero tendría q poner q
-												// fueran solo los valores a o h
+		if (columna < 'a' || columna > 'h') { 
 			throw new IllegalArgumentException("ERROR: Columna no válida.");
 		}
 		setColor(color);
@@ -117,8 +116,7 @@ public class Torre {
 		case DERECHA:
 			if ((color == Color.BLANCO && posicion.getColumna() + pasos > 'h')
 					|| (color == Color.NEGRO && posicion.getColumna() - pasos < 'a')) {
-				throw new OperationNotSupportedException("ERROR: se sale del tablero"); // Esto no lo está comprobando,
-																						// solo la excp d arriba.
+				throw new OperationNotSupportedException("ERROR: se sale del tablero");
 			}
 			if (color == Color.BLANCO) {
 				setPosicion(new Posicion(posicion.getFila(), (char) (posicion.getColumna() + pasos)));
@@ -180,6 +178,4 @@ public class Torre {
 		return "fila=" + posicion.getFila() + ", columna=" + posicion.getColumna() + ", color=" + color;
 	}
 
-	
-	
 }

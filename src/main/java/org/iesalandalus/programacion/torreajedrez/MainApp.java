@@ -14,27 +14,37 @@ public class MainApp {
 			mostrarMenu();
 			opcion = elegirOpcion();
 			ejecutarOpcion(opcion);
+			System.out.println("");
+			System.out.println("Estado actual de la torre:");
 			mostrarTorre();
+			System.out.println("");
 		} while (opcion != 5);
 
 	}
 
 	private static void mostrarTorre() {
-		System.out.println(torre.toString());
+		if (torre == null) {
+			System.out.println("Torre no inicializada.");
+		} else {
+			System.out.println(torre.toString());
+		}
 	}
 
 	private static void mostrarMenu() {
-		System.out.println("MENÚ");
-		System.out.println("1. Crear torre por defecto.");
-		System.out.println("2. Crear una torre de un color");
-		System.out.println("3. Crear una torre de un color en una columna inicial dada ('a' o 'h')");
-		System.out.println("4. Mover la torre");
-		System.out.println("5. Salir");
+		System.out.println("          MENÚ       ");
+		System.out.println("------------------------------");
+		System.out.println("  1. Crear torre por defecto");
+		System.out.println("  2. Crear una torre de un color");
+		System.out.println("  3. Crear una torre de un color en una columna inicial ('a' o 'h')");
+		System.out.println("  4. Mover la torre");
+		System.out.println("  5. Salir");
+		System.out.println("");
+
 
 	}
 
 	private static int elegirOpcion() {
-		System.out.println("Elige una opción del menú.");
+		System.out.println("Elige una opción del menú:");
 		int opcionElegida = Entrada.entero();
 		while (opcionElegida < 1 || opcionElegida > 5) {
 			System.out.println("Esa no es una opción del menú. Vuelve a elegir una opción correcta.");
@@ -45,10 +55,10 @@ public class MainApp {
 	}
 
 	private static Color elegirColor() {
-		System.out.println("Elige un color: B(Blanco) o N(Negro)");
+		System.out.println("Elige un color: b (Blanco) o n (Negro)");
 		char colorElegido = Entrada.caracter();
-		while (colorElegido != 'B' || colorElegido != 'b' || colorElegido != 'A' || colorElegido != 'a') {
-			System.out.println("Opción inválida. Vuelve a elegir.");
+		while (colorElegido != 'B' && colorElegido != 'b' && colorElegido != 'N' && colorElegido != 'n') {
+			System.out.println("Opción inválida. Vuelve a elegir (b/n).");
 			colorElegido = Entrada.caracter();
 		}
 		if (colorElegido == 'B' || colorElegido == 'b') {
@@ -60,11 +70,11 @@ public class MainApp {
 	}
 
 	private static char elegirColumnaInicial() {
-		System.out.println("Elige la columna inicial: A o H");
+		System.out.println("Elige la columna inicial: a o h");
 		char columnaElegida = Entrada.caracter();
 
-		while (columnaElegida != 'A' || columnaElegida != 'a' || columnaElegida != 'H' || columnaElegida != 'h') {
-			System.out.println("Opción inválida. Vuelve a elegir.");
+		while (columnaElegida != 'A' && columnaElegida != 'a' && columnaElegida != 'H' && columnaElegida != 'h') {
+			System.out.println("Opción inválida. Vuelve a elegir (a/h).");
 			columnaElegida = Entrada.caracter();
 		}
 		return Character.toLowerCase(columnaElegida);
