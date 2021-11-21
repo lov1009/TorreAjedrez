@@ -34,4 +34,19 @@ public class MainApp {
 		return opcionElegida;
 
 	}
+
+	private static Color elegirColor() {
+		System.out.println("Elige un color: B(Blanco) o N(Negro)");
+		char colorElegido = Entrada.caracter();
+		while (colorElegido != 'B' || colorElegido != 'b' || colorElegido != 'A' || colorElegido != 'a') {
+			System.out.println("Opción inválida. Vuelve a elegir.");
+			colorElegido = Entrada.caracter();
+		}
+		if (colorElegido == 'B' || colorElegido == 'b') {
+			return Color.BLANCO;
+
+		}
+		return Color.NEGRO;
+
+	}
 }
