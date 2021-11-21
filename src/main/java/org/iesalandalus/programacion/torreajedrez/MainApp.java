@@ -103,4 +103,8 @@ public class MainApp {
 		}
 	}
 
+	private static void crearTorreDefecto() {
+		torre = new Torre();
+	}
+
 }
