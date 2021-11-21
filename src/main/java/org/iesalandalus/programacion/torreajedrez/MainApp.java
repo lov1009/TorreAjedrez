@@ -18,7 +18,7 @@ public class MainApp {
 		System.out.println("MENÚ");
 		System.out.println("1. Crear torre por defecto.");
 		System.out.println("2. Crear una torre de un color");
-		System.out.println("3. Crear una torre de un color en una columna inicial dada ('c' o 'f')");
+		System.out.println("3. Crear una torre de un color en una columna inicial dada ('a' o 'h')");
 		System.out.println("4. Mover la torre");
 		System.out.println("5. Salir");
 
@@ -59,5 +59,16 @@ public class MainApp {
 			columnaElegida = Entrada.caracter();
 		}
 		return Character.toLowerCase(columnaElegida);
+	}
+
+	private static void mostrarMenuDirecciones() {
+		System.out.println("MENÚ DIRECCIONES:");
+		System.out.println("1. ARRIBA.");
+		System.out.println("2. ABAJO.");
+		System.out.println("3. DERECHA.");
+		System.out.println("4. IZQUIERDA");
+		System.out.println("5. ENROQUE CORTO.");
+		System.out.println("6. ENROQUE LARGO.");
+
 	}
 }
