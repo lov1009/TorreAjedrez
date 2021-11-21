@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.torreajedrez;
 
+import java.util.Objects;
+
 import javax.naming.OperationNotSupportedException;
 
 public class Torre {
@@ -56,6 +58,7 @@ public class Torre {
 
 	}
 
+	// Crear método enrocar
 	public void enrocar(Direccion direccion) throws OperationNotSupportedException {
 		if (direccion == null) {
 			throw new NullPointerException("ERROR: La dirección no puede ser nula.");
@@ -88,6 +91,7 @@ public class Torre {
 		}
 	}
 
+	// Crear método mover
 	public void mover(Direccion direccion, int pasos) throws OperationNotSupportedException {
 		if (pasos <= 0) {
 			throw new IllegalArgumentException("ERROR: El número de pasos debe ser positivo.");
@@ -151,6 +155,24 @@ public class Torre {
 		default:
 			break;
 		}
+	}
+
+	// Crear métodos hashCode y equals
+	@Override
+	public int hashCode() {
+		return Objects.hash(color, posicion);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Torre other = (Torre) obj;
+		return color == other.color && Objects.equals(posicion, other.posicion);
 	}
 
 }
