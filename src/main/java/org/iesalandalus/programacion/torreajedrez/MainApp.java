@@ -49,4 +49,15 @@ public class MainApp {
 		return Color.NEGRO;
 
 	}
+
+	private static char elegirColumnaInicial() {
+		System.out.println("Elige la columna inicial: A o H");
+		char columnaElegida = Entrada.caracter();
+
+		while (columnaElegida != 'A' || columnaElegida != 'a' || columnaElegida != 'H' || columnaElegida != 'h') {
+			System.out.println("Opción inválida. Vuelve a elegir.");
+			columnaElegida = Entrada.caracter();
+		}
+		return Character.toLowerCase(columnaElegida);
+	}
 }
