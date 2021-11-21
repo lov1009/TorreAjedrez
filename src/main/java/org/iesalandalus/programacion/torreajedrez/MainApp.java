@@ -107,4 +107,7 @@ public class MainApp {
 		torre = new Torre();
 	}
 
+	private static void crearTorreColor() {
+		torre = new Torre(elegirColor());
+	}
 }
