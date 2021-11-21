@@ -9,7 +9,14 @@ public class MainApp {
 	static Torre torre;
 
 	public static void main(String[] args) {
-		System.out.println("kk");
+		int opcion;
+		do {
+			mostrarMenu();
+			opcion = elegirOpcion();
+			ejecutarOpcion(opcion);
+			mostrarTorre();
+		} while (opcion != 5);
+
 	}
 
 	private static void mostrarTorre() {
