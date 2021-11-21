@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.torreajedrez;
 
+import javax.naming.OperationNotSupportedException;
+
 import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class MainApp {
@@ -113,5 +115,32 @@ public class MainApp {
 
 	private static void crearTorreColorColumna() {
 		torre = new Torre(elegirColor(), elegirColumnaInicial());
+	}
+
+	private static void mover() {
+		mostrarMenuDirecciones();
+		Direccion direccionElegida = elegirDireccion();
+		switch (direccionElegida) {
+		case ENROQUE_CORTO:
+		case ENROQUE_LARGO:
+			try {
+				torre.enrocar(direccionElegida);
+			} catch (OperationNotSupportedException ex) {
+				System.out.println(ex.getExplanation());
+
+			}
+			break;
+		default:
+			System.out.println("Pasos a mover:");
+			int pasosIntroducidos = Entrada.entero();
+			try {
+				torre.mover(direccionElegida, pasosIntroducidos);
+
+			} catch (OperationNotSupportedException ex) {
+				System.out.println(ex.getExplanation());
+			}
+			break;
+
+		}
 	}
 }
