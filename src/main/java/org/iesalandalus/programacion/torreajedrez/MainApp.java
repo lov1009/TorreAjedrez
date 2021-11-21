@@ -71,4 +71,36 @@ public class MainApp {
 		System.out.println("6. ENROQUE LARGO.");
 
 	}
+
+	private static Direccion elegirDireccion() {
+		System.out.println("Elige una opción del menú de direcciones.");
+		int direccionElegida = Entrada.entero();
+		while (direccionElegida < 1 || direccionElegida > 6) {
+			System.out.println("Esa no es una opción del menú de direcciones. Vuelve a elegir una opción correcta.");
+			direccionElegida = Entrada.entero();
+		}
+
+		switch (direccionElegida) {
+		case 1:
+			return Direccion.ARRIBA;
+
+		case 2:
+			return Direccion.ABAJO;
+
+		case 3:
+			return Direccion.DERECHA;
+
+		case 4:
+			return Direccion.IZQUIERDA;
+
+		case 5:
+			return Direccion.ENROQUE_CORTO;
+
+		case 6:
+			return Direccion.ENROQUE_LARGO;
+		default:
+			return null;
+		}
+	}
+
 }
