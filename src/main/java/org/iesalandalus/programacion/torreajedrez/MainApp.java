@@ -40,7 +40,6 @@ public class MainApp {
 		System.out.println("  5. Salir");
 		System.out.println("");
 
-
 	}
 
 	private static int elegirOpcion() {
@@ -145,6 +144,8 @@ public class MainApp {
 			} catch (OperationNotSupportedException ex) {
 				System.out.println(ex.getExplanation());
 
+			} catch (NullPointerException ex) {
+				System.out.println(ex.getMessage());
 			}
 			break;
 		default:
@@ -155,6 +156,8 @@ public class MainApp {
 
 			} catch (OperationNotSupportedException ex) {
 				System.out.println(ex.getExplanation());
+			} catch (NullPointerException ex) {
+				System.out.println(ex.getMessage());
 			}
 			break;
 
